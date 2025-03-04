@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Bunker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+        }
+
+        h1 {
+            font-weight: 100;
+            font-size: 64px; /* Doubled in size */
+            margin-bottom: 100px; /* Extra spacing */
+        }
+
+        .bunker {
+            font-weight: 700;
+        }
+
+        .contact, .footer {
+            font-weight: 400;
+            font-size: 12px; /* Smaller text */
+            opacity: 0.7; /* Subtle, uniform look */
+        }
+
+        .contact div, .footer div {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>studio<span class="bunker">bunker</span></h1>
+
+        <div class="contact">
+            <div>+386 69 437 649</div>
+            <div>nace@studiobunker.si</div>
+            <div>www.studiobunker.si</div>
+        </div>
+
+        <div class="footer" style="margin-top: 20px;">
+            <div>studio bunker, arhitekturno projektiranje d.o.o.</div>
+            <div>Cesta bratov Mravljakov 6, 3320 Velenje</div>
+        </div>
+    </div>
+</body>
+</html>
