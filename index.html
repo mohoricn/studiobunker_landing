@@ -7,8 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: black;
-            color: white;
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
             margin: 0;
@@ -18,46 +16,95 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDelayed {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .container {
+            max-width: 90vw;
             max-width: 400px;
         }
 
         h1 {
             font-weight: 100;
-            font-size: 64px; /* Doubled in size */
-            margin-bottom: 100px; /* Extra spacing */
+            font-size: 64px;
+            margin-bottom: 100px;
         }
 
         .bunker {
             font-weight: 700;
         }
 
+        .content {
+            animation: fadeInDelayed 1.5s ease-in;
+            animation-delay: 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
         .contact, .footer {
             font-weight: 400;
-            font-size: 12px; /* Smaller text */
-            opacity: 0.7; /* Subtle, uniform look */
+            font-size: 12px;
+            opacity: 0.7;
         }
 
         .contact div, .footer div {
             margin: 4px 0;
         }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const colorPairs = [
+                { bg: "#31473A", text: "#EDF4F2" },
+                { bg: "#00246B", text: "#CADCFC" },
+                { bg: "#000000", text: "#ffffff" },
+                { bg: "#5BA683", text: "#F2F2F2" },
+                { bg: "#1C1C1C", text: "#EAEAEA" },
+                { bg: "#3A3A3A", text: "#D8C3A5" },
+                { bg: "#1E3D59", text: "#F5F0E1" },
+                { bg: "#A9BCD0", text: "#373F51" },
+                { bg: "#2D3142", text: "#BFC0C0" }
+            ];
+            
+            const selectedPair = colorPairs[Math.floor(Math.random() * colorPairs.length)];
+            document.body.style.backgroundColor = selectedPair.bg;
+            document.body.style.color = selectedPair.text;
+            document.querySelectorAll("a").forEach(link => link.style.color = selectedPair.text);
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>studio<span class="bunker">bunker</span></h1>
 
-        <div class="contact">
-            <div>+386 69 437 649</div>
-            <div>info@studiobunker.si</div>
-            <div>www.studiobunker.si</div>
-        </div>
+        <div class="content">
+            <div class="contact">
+                <div><a href="tel:+38669437649">+386 69 437 649</a></div>
+                <div><a href="mailto:info@studiobunker.si">info@studiobunker.si</a></div>
+                <div><a href="https://www.studiobunker.si" target="_blank">www.studiobunker.si</a></div>
+            </div>
 
-        <div class="footer" style="margin-top: 20px;">
-            <div>studio bunker, arhitekturno projektiranje d.o.o.</div>
-            <div>Cesta bratov Mravljakov 6, 3320 Velenje</div>
+            <div class="footer" style="margin-top: 20px;">
+                <div>studio bunker, arhitekturno projektiranje d.o.o.</div>
+                <div>Cesta bratov Mravljakov 6, 3320 Velenje</div>
+            </div>
         </div>
     </div>
 </body>
