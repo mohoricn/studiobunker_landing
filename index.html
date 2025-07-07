@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Studio Bunker</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      font-size: 14px;
+      font-size: 12px;
       margin: 0;
       padding: 0;
       background: #000;
@@ -39,12 +39,77 @@
       font-weight: 700;
     }
 
-    .content {
-      padding: 60px 20px;
+    .paragraph-section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .paragraph-container {
+      max-width: 350px;
+      text-align: left;
+      line-height: 1.6;
+      margin: 0 auto;
+    }
+
+    .services-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      color: inherit;
+      text-align: left;
+    }
+
+    .services-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .services-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+
+    .image-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
       text-align: center;
+    }
+
+    .image-container img {
+      max-width: 500px;
+      max-height: 60vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0px;
+    }
+
+    /* Kontaktna sekcija v stilu iz tvoje datoteke */
+    .content {
+      padding: 60px 20px 40px;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.7;
       animation: fadeInDelayed 1.5s ease-in;
       animation-delay: 0.5s;
-      opacity: 0;
       animation-fill-mode: forwards;
     }
 
@@ -53,23 +118,30 @@
       to { opacity: 1; }
     }
 
-    .paragraph-container {
-      max-width: 400px;
-      margin: 40px auto;
-      text-align: left;
-      color: inherit;
-      line-height: 1.6;
+    .contact {
+      margin: 20px 0 10px;
+      line-height: 1.5;
     }
 
-    .contact, .footer {
-      font-weight: 400;
-      font-size: 12px;
-      opacity: 0.7;
-      margin: 10px 0;
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      margin: 4px 0;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 20px;
+      line-height: 1.4;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
     a:hover {
@@ -83,7 +155,7 @@
       right: 20px;
       width: 20px;
       height: 20px;
-      background-color: white;
+      background-color: currentColor;
       border-radius: 50%;
       cursor: pointer;
       display: none;
@@ -129,53 +201,56 @@
     <h1>studio<span class="bunker">bunker</span></h1>
   </section>
 
-  <section class="content">
+
+ <section class="image-container">
+    <img src="https://i.ibb.co/cGPVMd1/Knji-nica-Mislinja-foto-anaskobe-3.jpg" alt="Knji-nica-Mislinja-foto-anaskobe-3" border="0">
+  </section>
+
+  <section class="paragraph-section">
     <div class="paragraph-container">
       <p>
-        Studio bunker sem leta 2025 ustanovil Nace Mohorič. Diplomiral sem na Fakulteti za arhitekturo Univerze v Ljubljani. Med študijem in v magistrski nalogi sem se ukvarjal z generativnim oblikovanjem in in uporabo 3D tiska v arhitekturi. Dodatno sem se izobraževal na Univerzi Stanford v ZDA, sodeloval pa sem tudi s Tehnično univerzo na Dunaju, Univerzo Tsinghua v Pekingu in Univerzo Keio iz Tokija.
-Delovne izkušnje sem nabiral pri zavodu Štajn arhitekti in podjetju Vebiro, med študijem pa sem opravljal tudi delo tehničnega sodelavca v seminarju prof. Polone Filipič Gorenšek.
-
-Za svoje delo sem prejel več nagrad na natečajih in tekmovanjih: Kulturni dom in glasbena šola Grosuplje, Urbanizem Roška, večstanovanjska stavba za Pošto in večstanovanjska stavba Žarova v Velenju. Za projekt knjižnice v Mislinji smo prejeli nagrado Big See interior design, projekt pa smo  razstavljali tudi na 24. salonu arhitekture v Novem Sadu.
-
+        Studio bunker sem leta 2025 ustanovil Nace Mohorič. Diplomiral sem na Fakulteti za arhitekturo Univerze v Ljubljani. Med študijem in v magistrski nalogi sem se ukvarjal z generativnim oblikovanjem in in uporabo 3D tiska v arhitekturi. Dodatno sem se izobraževal na Univerzi Stanford v ZDA, sodeloval pa sem tudi s Tehnično univerzo na Dunaju, Univerzo Tsinghua v Pekingu in Univerzo Keio iz Tokija.<br><br>
+        Delovne izkušnje sem nabiral pri zavodu Štajn arhitekti in podjetju Vebiro, med študijem pa sem opravljal tudi delo tehničnega sodelavca v seminarju prof. Polone Filipič Gorenšek.<br><br>
+        Za svoje delo sem prejel več nagrad na natečajih in tekmovanjih: Kulturni dom in glasbena šola Grosuplje, Urbanizem Roška, večstanovanjska stavba za Pošto in večstanovanjska stavba Žarova v Velenju. Za projekt knjižnice v Mislinji smo prejeli nagrado Big See interior design, projekt pa smo razstavljali tudi na 24. salonu arhitekture v Novem Sadu.
       </p>
-    </div>
-      
- <div class="paragraph-container">
-      <p>
-        STORITVE
-Idejne zasnove
-Pridobivanje gradbenih dovoljenj
-Legalizacije
-Inotranje oblikovanje
-Študije osončenja
-Izdelava OPPN
-
-        
-      </p>
-    </div>
-    <div class="paragraph-container">
-      <p>
-        STUDIO BUNKER
-
-Studio bunker je kolektiv, kjer se ukvarjamo z arhitekturnim načrtovanjem po meri človeka, pri čemer si z željo po boljšem rezultatu pomagamo z različnimi razpoložljivimi tehnologijami.
-
-Naše delo je pripravljeno z uporabo BIM tehnologije, strankam in javnosti pa načrtovano predstavimo na naročniku najbljižje načine, kot je uporaba VR tehnologije, izdelava 3D tiskanih maket ali vizualizacij.
-Bunker je kolektiv, ki s pomočjo tehnologije rešuje zaplete, še preden se zgodijo.
-
-      </p>
-    </div>
-
-    <div class="contact">
-      <div><a href="tel:+38669437649">+386 69 437 649</a></div>
-      <div><a href="mailto:info@studiobunker.si">info@studiobunker.si</a></div>
-      <div><a href="https://www.studiobunker.si" target="_blank">www.studiobunker.si</a></div>
-    </div>
-
-    <div class="footer" style="margin-top: 20px;">
-      <div>studio bunker, arhitekturno projektiranje d.o.o.</div>
-      <div>Cesta bratov Mravljakov 6, 3320 Velenje</div>
     </div>
   </section>
+
+
+  <section class="paragraph-section">
+    <div class="paragraph-container">
+      <h2>STORITVE</h2>
+      <ul class="services-list">
+        <li>Idejne zasnove</li>
+        <li>Pridobivanje gradbenih dovoljenj</li>
+        <li>Legalizacije</li>
+        <li>Notranje oblikovanje</li>
+        <li>Študije osončenja</li>
+        <li>Izdelava OPPN</li>
+      </ul>
+    </div>
+  </section>
+
+ 
+
+ 
+
+<section class="paragraph-section contact-section" style="display: flex; justify-content: center; align-items: flex-end; padding: 0 20px 20px; height: 100vh; box-sizing: border-box; text-align: center;">
+  <div class="paragraph-container">
+    <div class="content">
+      <div class="contact">
+        <a href="tel:+38669437649">+386 69 437 649</a>
+        <a href="mailto:info@studiobunker.si">info@studiobunker.si</a>
+        <a href="https://www.studiobunker.si" target="_blank" rel="noopener noreferrer">www.studiobunker.si</a>
+      </div>
+      <div class="footer">
+        <div>studio bunker, arhitekturno projektiranje d.o.o.</div>
+        <div>Cesta bratov Mravljakov 6, 3320 Velenje</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <div class="scroll-top" onclick="scrollToTop()"></div>
 </body>
