@@ -1,111 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Bunker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            animation: fadeIn 1.5s ease-in;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio Bunker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+    }
 
-        @keyframes fadeInDelayed {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        .container {
-            max-width: 90vw;
-            max-width: 400px;
-        }
+    h1 {
+      font-weight: 100;
+      font-size: 64px;
+      margin: 0;
+    }
 
-        h1 {
-            font-weight: 100;
-            font-size: 64px;
-            margin-bottom: 100px;
-        }
+    .bunker {
+      font-weight: 700;
+    }
 
-        .bunker {
-            font-weight: 700;
-        }
+    .content {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeInDelayed 1.5s ease-in;
+      animation-delay: 0.5s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
 
-        .content {
-            animation: fadeInDelayed 1.5s ease-in;
-            animation-delay: 0.5s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
+    @keyframes fadeInDelayed {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        .contact, .footer {
-            font-weight: 400;
-            font-size: 12px;
-            opacity: 0.7;
-        }
+    .paragraph-container {
+      max-width: 400px;
+      margin: 40px auto;
+      text-align: left;
+      color: inherit;
+      line-height: 1.6;
+    }
 
-        .contact div, .footer div {
-            margin: 4px 0;
-        }
+    .contact, .footer {
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.7;
+      margin: 10px 0;
+    }
 
-        a {
-            text-decoration: none;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const colorPairs = [
-                { bg: "#31473A", text: "#EDF4F2" },
-                { bg: "#00246B", text: "#CADCFC" },
-                { bg: "#000000", text: "#ffffff" },
-                { bg: "#5BA683", text: "#F2F2F2" },
-                { bg: "#1C1C1C", text: "#EAEAEA" },
-                { bg: "#3A3A3A", text: "#D8C3A5" },
-                { bg: "#1E3D59", text: "#F5F0E1" },
-                { bg: "#A9BCD0", text: "#373F51" },
-                { bg: "#2D3142", text: "#BFC0C0" }
-            ];
-            
-            const selectedPair = colorPairs[Math.floor(Math.random() * colorPairs.length)];
-            document.body.style.backgroundColor = selectedPair.bg;
-            document.body.style.color = selectedPair.text;
-            document.querySelectorAll("a").forEach(link => link.style.color = selectedPair.text);
-        });
-    </script>
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Scroll-to-top button */
+    .scroll-top {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const colorPairs = [
+        { bg: "#31473A", text: "#EDF4F2" },
+        { bg: "#00246B", text: "#CADCFC" },
+        { bg: "#000000", text: "#ffffff" },
+        { bg: "#5BA683", text: "#F2F2F2" },
+        { bg: "#1C1C1C", text: "#EAEAEA" },
+        { bg: "#3A3A3A", text: "#D8C3A5" },
+        { bg: "#1E3D59", text: "#F5F0E1" },
+        { bg: "#A9BCD0", text: "#373F51" },
+        { bg: "#2D3142", text: "#BFC0C0" }
+      ];
+
+      const selectedPair = colorPairs[Math.floor(Math.random() * colorPairs.length)];
+      document.body.style.backgroundColor = selectedPair.bg;
+      document.body.style.color = selectedPair.text;
+      document.querySelectorAll("a").forEach(link => link.style.color = selectedPair.text);
+    });
+
+    window.addEventListener('scroll', function () {
+      const scrollBtn = document.querySelector('.scroll-top');
+      if (window.scrollY > 100) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <h1>studio<span class="bunker">bunker</span></h1>
+  <section class="hero">
+    <h1>studio<span class="bunker">bunker</span></h1>
+  </section>
 
-        <div class="content">
-            <div class="contact">
-                <div><a href="tel:+38669437649">+386 69 437 649</a></div>
-                <div><a href="mailto:info@studiobunker.si">info@studiobunker.si</a></div>
-                <div><a href="https://www.studiobunker.si" target="_blank">www.studiobunker.si</a></div>
-            </div>
+  <section class="content">
+    <div class="paragraph-container">
+      <p>
+        Studio bunker sem leta 2025 ustanovil Nace Mohorič. Diplomiral sem na Fakulteti za arhitekturo Univerze v Ljubljani. Med študijem in v magistrski nalogi sem se ukvarjal z generativnim oblikovanjem in in uporabo 3D tiska v arhitekturi. Dodatno sem se izobraževal na Univerzi Stanford v ZDA, sodeloval pa sem tudi s Tehnično univerzo na Dunaju, Univerzo Tsinghua v Pekingu in Univerzo Keio iz Tokija.
+Delovne izkušnje sem nabiral pri zavodu Štajn arhitekti in podjetju Vebiro, med študijem pa sem opravljal tudi delo tehničnega sodelavca v seminarju prof. Polone Filipič Gorenšek.
 
-            <div class="footer" style="margin-top: 20px;">
-                <div>studio bunker, arhitekturno projektiranje d.o.o.</div>
-                <div>Cesta bratov Mravljakov 6, 3320 Velenje</div>
-            </div>
-        </div>
+Za svoje delo sem prejel več nagrad na natečajih in tekmovanjih: Kulturni dom in glasbena šola Grosuplje, Urbanizem Roška, večstanovanjska stavba za Pošto in večstanovanjska stavba Žarova v Velenju. Za projekt knjižnice v Mislinji smo prejeli nagrado Big See interior design, projekt pa smo  razstavljali tudi na 24. salonu arhitekture v Novem Sadu.
+
+      </p>
     </div>
+      
+ <div class="paragraph-container">
+      <p>
+        STORITVE
+Idejne zasnove
+Pridobivanje gradbenih dovoljenj
+Legalizacije
+Inotranje oblikovanje
+Študije osončenja
+Izdelava OPPN
+
+        
+      </p>
+    </div>
+    <div class="paragraph-container">
+      <p>
+        STUDIO BUNKER
+
+Studio bunker je kolektiv, kjer se ukvarjamo z arhitekturnim načrtovanjem po meri človeka, pri čemer si z željo po boljšem rezultatu pomagamo z različnimi razpoložljivimi tehnologijami.
+
+Naše delo je pripravljeno z uporabo BIM tehnologije, strankam in javnosti pa načrtovano predstavimo na naročniku najbljižje načine, kot je uporaba VR tehnologije, izdelava 3D tiskanih maket ali vizualizacij.
+Bunker je kolektiv, ki s pomočjo tehnologije rešuje zaplete, še preden se zgodijo.
+
+      </p>
+    </div>
+
+    <div class="contact">
+      <div><a href="tel:+38669437649">+386 69 437 649</a></div>
+      <div><a href="mailto:info@studiobunker.si">info@studiobunker.si</a></div>
+      <div><a href="https://www.studiobunker.si" target="_blank">www.studiobunker.si</a></div>
+    </div>
+
+    <div class="footer" style="margin-top: 20px;">
+      <div>studio bunker, arhitekturno projektiranje d.o.o.</div>
+      <div>Cesta bratov Mravljakov 6, 3320 Velenje</div>
+    </div>
+  </section>
+
+  <div class="scroll-top" onclick="scrollToTop()"></div>
 </body>
 </html>
+
